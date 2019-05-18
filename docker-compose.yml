@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "13000:3000"
+    volumes:
+      - .:/app
+      - rails_5_2_3_bundle:/usr/local/bundle
+    tty: true
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+  db:
+    image: postgres:10.7-alpine
+    volumes:
+      - rails_5_2_3_pgsqldb:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+
+volumes:
+  rails_5_2_3_pgsqldb:
+    driver: local
+  rails_5_2_3_bundle:
+    driver: local
