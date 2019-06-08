@@ -1,0 +1,7 @@
+<h1>Fruits#index</h1>
+
+<ul>
+  <% @fruits.each_with_index do |fruit, i| %>
+    <li><%= link_to fruit, fruit_path(i) %>
+  <% end %>
+</ul>
