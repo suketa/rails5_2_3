@@ -12,7 +12,7 @@ services:
     environment:
       # - POSTGRES_USER
       # - POSTGRES_PASSWORD
-      - MYSQL_ROOT_PASSWORD
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
   db:
     # image: postgres:10.7-alpine
     # volumes:
