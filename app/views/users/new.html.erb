@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<%= form_with url: users_path do |form| %>
+  <%= form.text_field name="names[]" %>
+  <br />
+  <%= form.text_field name="names[]" %>
+  <br />
+  <%= form.submit %>
+<% end %>
